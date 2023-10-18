@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(hpp());
   app.use(helmet({ contentSecurityPolicy: false }));
   app.use(cors({
-    origin: true,
+    origin: "https://subtle-strudel-692ff2.netlify.app",
     credentials: true,
   }));
 } else {
@@ -51,7 +51,7 @@ app.use(session({
   cookie: {
     httpOnly: true,
     secure: false,
-    domain: process.env.NODE_ENV === 'production' && 'subtle-strudel-692ff2.netlify.app'
+    domain: process.env.NODE_ENV === 'production' && '.subtle-strudel-692ff2.netlify.app'
   },
 }));
 app.use(passport.initialize());
