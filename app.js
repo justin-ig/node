@@ -24,7 +24,7 @@ db.sequelize.sync()
   })
   .catch(console.error);
 passportConfig();
-
+app.set('trust proxy', true);
 if (process.env.NODE_ENV === 'production') {
   app.use(morgan('combined'));
   app.use(hpp());
