@@ -51,7 +51,7 @@ app.use(session({
   cookie: {
     httpOnly: true,
     secure: false,
-    domain: process.env.NODE_ENV === 'production' && '.nodebird.com'
+    domain: process.env.NODE_ENV === 'production' && 'subtle-strudel-692ff2.netlify.app'
   },
 }));
 app.use(passport.initialize());
