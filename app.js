@@ -54,7 +54,7 @@ app.use(session({
 }),
   resave: false,
   secret: process.env.COOKIE_SECRET,
-  saveUninitialized: false,
+  saveUninitialized: true,
   //name : "__session",
   cookie: {
     sameSite: "none",
