@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(hpp());
   app.use(helmet({ contentSecurityPolicy: false }));
   app.use(cors({
-    origin: ['https://subtle-strudel-692ff2.netlify.app', 'http://coronacore.site'],
+    origin: ['https://subtle-strudel-692ff2.netlify.app', 'https://node-ingeun.koyeb.app'],
     credentials: true,
   }));
 } else {
@@ -60,7 +60,7 @@ app.use(session({
   cookie: {
     sameSite: "none",
     secure: process.env.NODE_ENV === "production" ? true : false ,
-    domain: process.env.NODE_ENV === "production" ? "subtle-strudel-692ff2.netlify.app" : ""
+    domain: process.env.NODE_ENV === "production" ? ".subtle-strudel-692ff2.netlify.app" : ""
   },
 }));
 app.use(passport.initialize());
