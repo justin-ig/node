@@ -49,16 +49,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(session({
-  saveUninitialized: true,
   store: new MemoryStore({
     checkPeriod: 86400000, // 24 hours (= 24 * 60 * 60 * 1000 ms)
 }),
   resave: false,
   secret: process.env.COOKIE_SECRET,
-  sameSite : "lax",
-  name : "user",
+  saveUninitialized: false,
+  proxy: true,
+  name : "__session",
   cookie: {
-    sameSite: "lax",
+    sameSite: "none",
+    httpOnly: true,
     secure: process.env.NODE_ENV === "production" ? true : false ,
     domain: process.env.NODE_ENV === "production" ? ".subtle-strudel-692ff2.netlify.app" : ""
   },
