@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(hpp());
   app.use(helmet({ contentSecurityPolicy: false }));
   app.use(cors({
-    origin: ['https://subtle-strudel-692ff2.netlify.app', 'https://node-ingeun.koyeb.app'],
+    origin: ['https://subtle-strudel-692ff2.netlify.app', 'https://node-ingeun.koyeb.app', "https://e99f-123-111-94-200.ngrok-free.app"],
     credentials: true,
   }));
 } else {
