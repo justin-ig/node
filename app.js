@@ -8,6 +8,8 @@ const morgan = require('morgan');
 const path = require('path');
 const hpp = require('hpp');
 const helmet = require('helmet');
+const MemoryStore = require("memorystore")(session);
+
 
 const postRouter = require('./routes/post');
 const postsRouter = require('./routes/posts');
@@ -48,6 +50,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(session({
   saveUninitialized: true,
+  store: new MemoryStore({
+    checkPeriod: 86400000, // 24 hours (= 24 * 60 * 60 * 1000 ms)
+}),
   resave: false,
   secret: process.env.COOKIE_SECRET,
   sameSite : 'lax',
