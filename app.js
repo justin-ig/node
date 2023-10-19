@@ -57,7 +57,7 @@ app.use(session({
   secret: process.env.COOKIE_SECRET,
   sameSite : "none",
   cookie: {
-    sameSite : process.env.NODE_ENV === "production",
+    sameSite: "none",
     secure: process.env.NODE_ENV === "production",
     domain: process.env.NODE_ENV === 'production' && "subtle-strudel-692ff"
   },
