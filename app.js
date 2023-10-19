@@ -43,7 +43,7 @@ if (process.env.NODE_ENV === 'production') {
   }));
 }
 
-app.set('trust proxy', true);
+app.set('trust proxy', 1);
 app.use('/', express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -55,11 +55,11 @@ app.use(session({
 }),
   resave: false,
   secret: process.env.COOKIE_SECRET,
-  sameSite : 'lax',
+  sameSite : 'none',
   cookie: {
     httpOnly: true,
     secure: false,
-    domain: process.env.NODE_ENV === 'production' && 'subtle-strudel-692ff2.netlify.app'
+    domain: process.env.NODE_ENV === 'production' && 'https://subtle-strudel-692ff2.netlify.app'
   },
 }));
 app.use(passport.initialize());
