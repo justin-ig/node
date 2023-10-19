@@ -49,7 +49,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(session({
-  saveUninitialized: true,
+  saveUninitialized: false,
   store: new MemoryStore({
     checkPeriod: 86400000, // 24 hours (= 24 * 60 * 60 * 1000 ms)
 }),
