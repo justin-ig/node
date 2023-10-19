@@ -182,7 +182,6 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
           attributes: ['id'],
         }]
       })
-      res.cookie('hh','hh')
       return res.status(200).json(fullUserWithoutPassword);
     });
   })(req, res, next);

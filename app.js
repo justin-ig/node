@@ -59,8 +59,8 @@ app.use(session({
   proxy: true,
   cookie: {
     sameSite: "none",
-    secure: process.env.NODE_ENV === "production",
-    domain: process.env.NODE_ENV === 'production' && "subtle-strudel-692ff"
+    secure: process.env.NODE_ENV === "production" ? true : false ,
+    domain: process.env.NODE_ENV === "production" ? "subtle-strudel-692ff2.netlify.app" : ""
   },
 }));
 app.use(passport.initialize());
