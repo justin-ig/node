@@ -57,7 +57,6 @@ app.use(session({
   secret: process.env.COOKIE_SECRET,
   sameSite : "none",
   name : "user",
-  proxy: true,
   cookie: {
     sameSite: "none",
     secure: process.env.NODE_ENV === "production" ? true : false ,
