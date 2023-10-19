@@ -61,7 +61,7 @@ app.use(session({
     sameSite: "none",
     httpOnly: true,
     secure: process.env.NODE_ENV === "production" ? true : false ,
-    domain: process.env.NODE_ENV === "production" ? ".subtle-strudel-692ff2.netlify.app" : ""
+    // domain: process.env.NODE_ENV === "production" ? ".subtle-strudel-692ff2.netlify.app" : ""
   },
 }));
 app.use(passport.initialize());
