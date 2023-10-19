@@ -53,12 +53,11 @@ app.use(session({
   store: new MemoryStore({
     checkPeriod: 86400000, // 24 hours (= 24 * 60 * 60 * 1000 ms)
 }),
-  resave: false,
+  resave: true,
   secret: process.env.COOKIE_SECRET,
   sameSite : 'none',
   cookie: {
-    httpOnly: true,
-    secure: false,
+    secure: process.env.NODE_ENV === "production",
     domain: process.env.NODE_ENV === 'production' && 'https://subtle-strudel-692ff2.netlify.app'
   },
 }));
